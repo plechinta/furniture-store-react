@@ -1,0 +1,68 @@
+.section {
+  max-width: 1440px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.viewAll {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.viewAll:hover {
+  text-decoration: underline;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 товара в ряд на десктопе */
+  gap: 24px;
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 0 16px;
+  }
+  
+  /* Делаем горизонтальный скролл на мобильных устройствах вместо сетки */
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 16px; /* Место под тень карточек */
+    scrollbar-width: none;
+  }
+  
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grid > div {
+    flex: 0 0 70%; /* Карточка занимает 70% ширины экрана */
+    scroll-snap-align: start;
+  }
+}

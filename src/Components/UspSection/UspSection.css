@@ -1,0 +1,86 @@
+.usp-section {
+  background-color: #f4f4f4; /* Легкий сірий фон для розділення блоків */
+  padding: 32px 0;
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.usp-section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.usp-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 16px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.usp-card:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.usp-card__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #333333;
+}
+
+.usp-card__title {
+  font-family: 'Open Sans', 'Inter', sans-serif;
+  font-size: 14px; /* Зменшено для компактності, як у JYSK */
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.usp-card__subtitle {
+  font-family: 'Open Sans', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #666666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Адаптивність для планшетів (2 колонки) */
+@media (max-width: 992px) {
+  .usp-section__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Адаптивність для мобільних телефонів (1 колонка) */
+@media (max-width: 576px) {
+  .usp-section__container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .usp-card {
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .usp-card__icon {
+    margin-bottom: 0;
+    margin-right: 16px;
+    flex-shrink: 0;
+  }
+}

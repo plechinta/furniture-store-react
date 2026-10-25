@@ -1,0 +1,53 @@
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.menuList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto; /* Позволяет скроллить меню на смартфонах */
+  scrollbar-width: none; /* Скрывает ползунок в Firefox */
+}
+
+/* Скрываем ползунок в Chrome/Safari */
+.menuList::-webkit-scrollbar {
+  display: none;
+}
+
+.menuItem {
+  flex-shrink: 0; /* Чтобы текст не сжимался на мобильных */
+}
+
+.menuLink {
+  display: block;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: #374151;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.menuLink:hover {
+  color: #1e3a8a;
+  border-bottom-color: #1e3a8a; /* Подчеркивание при наведении */
+}
+
+/* Выделение активного пункта (например, если мы находимся в этой категории) */
+.menuLink.active {
+  color: #1e3a8a;
+  border-bottom-color: #1e3a8a;
+  font-weight: 600;
+}

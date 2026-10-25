@@ -1,0 +1,85 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* Верхняя часть: Большой баннер */
+.mainBanner {
+  width: 100%;
+  margin-bottom: 32px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.mainBanner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.mainBanner a:hover img {
+  transform: scale(1.02); /* Легкий эффект увеличения при наведении */
+}
+
+/* Нижняя часть: Сетка из 4 картинок */
+.quickLinksGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.quickLinkCard {
+  text-decoration: none;
+  color: #374151;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Задает пропорции картинок (широкоформатные) */
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.quickLinkCard:hover .imageWrapper img {
+  transform: scale(1.05); /* Увеличение маленьких картинок при ховере */
+}
+
+.quickLinkCard:hover .quickLinkTitle {
+  color: #1e3a8a;
+  text-decoration: underline;
+}
+
+.quickLinkTitle {
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+/* Адаптив для планшетов и смартфонов */
+@media (max-width: 992px) {
+  .quickLinksGrid {
+    grid-template-columns: repeat(2, 1fr); /* По 2 в ряд на планшетах */
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 16px;
+  }
+  .quickLinksGrid {
+    grid-template-columns: 1fr; /* По 1 в ряд на смартфонах */
+    gap: 16px;
+  }
+}

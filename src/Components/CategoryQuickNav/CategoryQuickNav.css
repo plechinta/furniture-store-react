@@ -1,0 +1,64 @@
+.category-quick-nav {
+  background-color: #ffffff;
+  padding: 24px 0;
+  width: 100%;
+}
+
+.category-quick-nav__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.category-quick-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #eaeaea;
+}
+
+.category-quick-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.category-quick-card__image-wrap {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+}
+
+.category-quick-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.category-quick-card:hover .category-quick-card__img {
+  transform: scale(1.05);
+}
+
+.category-quick-card__title {
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  text-align: center;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .category-quick-nav__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}

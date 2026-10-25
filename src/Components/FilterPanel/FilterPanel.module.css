@@ -1,0 +1,99 @@
+.overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 9999; animation: fadeIn 0.2s ease; }
+.panel { position: fixed; top: 0; right: -450px; width: 400px; max-width: 100vw; height: 100vh; background-color: #ffffff; z-index: 10000; display: flex; flex-direction: column; transition: right 0.3s ease; box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif; }
+.panelOpen { right: 0; }
+
+.header { display: flex; justify-content: center; align-items: center; padding: 24px; border-bottom: 1px solid #e5e7eb; position: relative; }
+.title { font-size: 16px; font-weight: 700; margin: 0; color: #111827; }
+.closeBtn { position: absolute; right: 16px; background: transparent; border: none; cursor: pointer; padding: 8px; }
+.content { flex-grow: 1; overflow-y: auto; padding: 0 24px; }
+
+/* Аккордеон */
+.filterSection { border-bottom: 1px solid #e5e7eb; }
+.accordionTrigger { width: 100%; display: flex; justify-content: space-between; align-items: center; background: transparent; border: none; font-size: 14px; font-weight: 700; color: #111827; cursor: pointer; padding: 24px 0; }
+.chevron { color: #6b7280; transition: transform 0.3s ease; }
+.chevronOpen { transform: rotate(180deg); }
+.accordionContent { padding-bottom: 24px; }
+
+/* ---------------- ПОЛЗУНОК ЦЕНЫ ---------------- */
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.sliderTrack {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 4px;
+  background-color: #e5e7eb;
+  border-radius: 2px;
+}
+
+.sliderFill {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  background-color: #1a428a;
+}
+
+.rangeInput {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  -webkit-appearance: none;
+  background: transparent;
+  pointer-events: none; /* ПРОПУСКАЕТ КЛИКИ СКВОЗЬ ИНПУТ */
+  margin: 0;
+}
+
+/* СТИЛЬ САМОГО КРУЖОЧКА (THUMB) */
+.rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: auto; /* ЛОВИТ КЛИКИ НА КРУЖОЧКЕ */
+  width: 24px;
+  height: 24px;
+  background-color: #1a428a;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 10;
+}
+
+.rangeInput::-moz-range-thumb {
+  pointer-events: auto;
+  width: 24px;
+  height: 24px;
+  background-color: #1a428a;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+/* ------------------------------------------------ */
+
+.priceInputsContainer { display: flex; gap: 16px; margin-top: 16px; }
+.priceInputBox { flex: 1; display: flex; flex-direction: column; position: relative; }
+.priceLabel { font-size: 11px; color: #6b7280; position: absolute; top: -18px; left: 0; }
+.priceInput { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; }
+.priceInput:focus { border-color: #1a428a; outline: none; }
+
+.checkboxLabel { display: flex; align-items: center; justify-content: space-between; font-size: 14px; padding: 8px 0; cursor: pointer; color: #333;}
+.checkboxText { flex-grow: 1; }
+.checkboxCount { color: #9ca3af; margin-right: 12px; font-size: 12px; }
+.checkbox { width: 18px; height: 18px; cursor: pointer; accent-color: #1a428a; }
+
+.footer { padding: 24px; border-top: 1px solid #e5e7eb; display: flex; gap: 16px; background-color: #ffffff; }
+.clearBtn { flex: 1; background-color: #ffffff; border: 1px solid #d1d5db; padding: 12px; border-radius: 4px; font-weight: 600; cursor: pointer; }
+.applyBtn { flex: 1; background-color: #1a428a; color: #ffffff; border: none; padding: 12px; border-radius: 4px; font-weight: 600; cursor: pointer; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }

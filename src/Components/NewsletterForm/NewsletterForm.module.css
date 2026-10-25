@@ -1,0 +1,136 @@
+.newsletterSection {
+  background-color: #f4f6f8; /* Світло-сірий фон секції */
+  padding: 64px 24px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* --- Заголовок та текст --- */
+.header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 32px auto;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 16px 0;
+}
+
+.subtitle {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #111827;
+  margin: 0;
+}
+
+.link {
+  color: #003185; /* Фірмовий синій колір для посилань */
+  text-decoration: underline;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+/* --- Обгортка для форми (щоб вирівняти по лівому краю всередині центру) --- */
+.formWrapper {
+  max-width: 900px; /* Ширина блоку з інпутами */
+  margin: 0 auto;
+  text-align: left;
+}
+
+.requiredText {
+  font-size: 12px;
+  color: #111827;
+  margin: 0 0 16px 0;
+}
+
+/* --- Ряд з інпутами та кнопкою --- */
+.inputRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto; /* Два однакові інпути і кнопка по розміру тексту */
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 15px;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.2s;
+  background-color: #ffffff;
+}
+
+.input:focus {
+  border-color: #003185;
+}
+
+.submitBtn {
+  background-color: #1a428a; /* Темно-синя кнопка */
+  color: #ffffff;
+  padding: 14px 48px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: #112d66;
+}
+
+/* --- Чекбокс та юридичний текст --- */
+.checkboxRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.checkbox {
+  margin-top: 4px; /* Вирівнювання чекбокса по першому рядку тексту */
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.legalText {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #333333;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* --- Адаптивність для мобільних пристроїв --- */
+@media (max-width: 768px) {
+  .newsletterSection {
+    padding: 48px 16px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .inputRow {
+    grid-template-columns: 1fr; /* На мобільному інпути і кнопка стають один під одним */
+  }
+  
+  .submitBtn {
+    width: 100%;
+  }
+}

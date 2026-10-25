@@ -1,0 +1,255 @@
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  font-family: Arial, sans-serif;
+  position: relative;
+  z-index: 100;
+  transition: z-index 0s;
+}
+
+/* Поднимаем шапку поверх overlay при клике на поиск */
+.headerActive {
+  z-index: 1005;
+}
+
+/* Затемненный фон */
+.searchOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.searchOverlayVisible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- Верхняя полоса --- */
+.topBanner {
+  background-color: #003185;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.topBannerLink {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.topBannerLink:hover {
+  text-decoration: underline;
+}
+
+/* --- Основной ряд --- */
+.mainRow {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.logoAndMenu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+}
+
+.burgerBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #111827;
+  padding: 0;
+}
+
+.burgerBtn:hover {
+  color: #003185;
+}
+
+.burgerText {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* --- Поиск --- */
+.searchContainer {
+  flex: 1;
+  max-width: 700px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #f3f4f6;
+  border: 2px solid transparent;
+}
+
+.searchContainerFocused {
+  box-shadow: 0 0 0 2px #003185;
+  background-color: #ffffff;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.searchInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 12px 48px 12px 16px;
+  font-size: 15px;
+  color: #111827;
+  outline: none;
+}
+
+.searchBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding: 0 16px;
+  background: transparent;
+  border: none;
+  color: #111827;
+  cursor: pointer;
+}
+
+/* --- Иконки профиля и корзины --- */
+.actionsContainer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.actionItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #111827;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.actionItem:hover {
+  color: #003185;
+}
+
+.cartIconWrapper {
+  position: relative;
+  display: flex;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: #003185;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* --- Нижний ряд --- */
+.secondaryRow {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px 12px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.locationBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+}
+
+.locationBtn:hover {
+  text-decoration: underline;
+}
+
+.secondaryNav {
+  display: flex;
+  gap: 24px;
+}
+
+.secondaryLink {
+  color: #111827;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.secondaryLink:hover {
+  color: #003185;
+  text-decoration: underline;
+}
+
+/* --- Адаптивность --- */
+@media (max-width: 992px) {
+  .secondaryNav {
+    display: none;
+  }
+  .mainRow {
+    gap: 16px;
+  }
+  .burgerText, .actionItem span {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainRow {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+  .searchContainer {
+    order: 3;
+    min-width: 100%;
+    margin-top: 8px;
+  }
+  .secondaryRow {
+    padding: 0 16px 12px 16px;
+  }
+}
